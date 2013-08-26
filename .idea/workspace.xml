@@ -513,8 +513,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="153" y="51" width="985" height="618" extended-state="1" />
-    <editor active="true" />
+    <frame x="153" y="51" width="985" height="618" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
