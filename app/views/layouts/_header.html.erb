@@ -1,0 +1,27 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "PlanWeb", root_url, id: "logo" %>
+
+      <nav>
+        <ul class="nav pull-right">
+          <button class="btn btn-link" type="button"><%= link_to "Home", root_url  %></button>
+          <button class="btn btn-link" type="button"><%= link_to "About Us", :controller => "welcome", :action => "about"  %></button>
+
+
+          <% if current_user %>
+          <button class="btn btn-link" type="button"><%= link_to 'Planning', planning_applications_url  %></button>
+          <button class="btn btn-link" type="button"><%= link_to "Web Design", web_design_assignments_url  %></button>
+          <button class="btn btn-link" type="button"><%= link_to "Log Out", :controller => "welcome", :action => "thank_you"  %></button>
+          <% else %>
+          <button class="btn btn-link" type="button"><%= link_to 'Planning',:controller => "welcome", :action => "planning" %></button>
+          <button class="btn btn-link" type="button"><%= link_to "Web Design", :controller => "welcome", :action => "web"  %></button>
+          <button class="btn btn-link" type="button"><%= link_to "Sign Up", :controller => "users", :action => "new"  %></button>
+          <button class="btn btn-link" type="button"><%= link_to "Sign In", :controller => "sessions", :action => "new"  %></button>
+          <% end %>
+          <button class="btn btn-link" type="button"><%= link_to "Contact Us", :controller => "welcome", :action => "contact"  %></button>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

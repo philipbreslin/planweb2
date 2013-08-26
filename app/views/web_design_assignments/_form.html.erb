@@ -1,0 +1,37 @@
+<%= form_for(@web_design_assignment) do |f| %>
+  <% if @web_design_assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@web_design_assignment.errors.count, "error") %> prohibited this web_design_assignment from being saved:</h2>
+
+      <ul>
+      <% @web_design_assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :job_reference %><br />
+    <%= f.text_area :job_reference %>
+  </div>
+  <div class="field">
+    <%= f.label :project_stage %><br />
+    <%= f.select :project_stage, WebDesignAssignment::PROJECT_STAGES %>
+  </div>
+  <div class="field">
+    <%= f.label :issued_on %><br />
+    <%= f.date_select :issued_on %>
+  </div>
+  <div class="field">
+    <%= f.label :completion_due_on %><br />
+    <%= f.date_select :completion_due_on %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

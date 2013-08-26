@@ -1,0 +1,27 @@
+<!--
+
+Reference: http://ruby.railstutorial.org/ruby-on-rails-tutorial-book
+Reference: http://http://twitter.github.io/bootstrap/index.html
+
+-->
+
+<div class="hero-unit">
+
+  <small>
+    <%= image_tag("PlanWeb.jpg") %>
+  </small>
+
+  <br/>
+
+<% provide(:title, 'Sign up') %>
+<h1>Sign Up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+        <%= render 'fields', f: f %>
+        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>

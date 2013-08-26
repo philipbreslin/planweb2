@@ -1,0 +1,89 @@
+<%= form_for(@planning_application) do |f| %>
+  <% if @planning_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planning_application.errors.count, "error") %> prohibited this planning_application from being saved:</h2>
+
+      <ul>
+      <% @planning_application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :planning_authority %><br />
+    <%= f.text_field :planning_authority %>
+  </div>
+  <div class="field">
+    <%= f.label :planning_authority_reference %><br />
+    <%= f.text_field :planning_authority_reference %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_name %><br />
+    <%= f.text_field :applicant_name %>
+  </div>
+  <div class="field">
+    <%= f.label :application_type %><br />
+    <%= f.text_field :application_type %>
+  </div>
+  <div class="field">
+    <%= f.label :location_address %><br />
+    <%= f.text_area :location_address %>
+  </div>
+  <div class="field">
+    <%= f.label :lodged_with_planning_authority_on %><br />
+    <%= f.date_select :lodged_with_planning_authority_on %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :validated_by_planning_authority_on %><br />
+    <%= f.date_select :validated_by_planning_authority_on %>
+  </div>
+  <div class="field">
+    <%= f.label :decision_expected_on %><br />
+    <%= f.date_select :decision_expected_on %>
+  </div>
+  <div class="field">
+    <%= f.label :decision_received_on %><br />
+    <%= f.date_select :decision_received_on %>
+  </div>
+  <div class="field">
+    <%= f.label :decision %><br />
+    <%= f.text_field :decision %>
+  </div>
+  <div class="field">
+    <%= f.label :extension_requested_on %><br />
+    <%= f.date_select :extension_requested_on %>
+  </div>
+  <div class="field">
+    <%= f.label :extension_granted_on %><br />
+    <%= f.date_select :extension_granted_on %>
+  </div>
+  <div class="field">
+    <%= f.label :url_to_observations %><br />
+    <%= f.text_field :url_to_observations %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_observations %><br />
+    <%= f.number_field :number_of_observations %>
+  </div>
+  <div class="field">
+    <%= f.label :commencement_notice_received_by_planning_authority_on %><br />
+    <%= f.date_select :commencement_notice_received_by_planning_authority_on %>
+  </div>
+  <div class="field">
+    <%= f.label :commenced_on %><br />
+    <%= f.date_select :commenced_on %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<!--
+
+Reference: http://ruby.railstutorial.org/ruby-on-rails-tutorial-book
+Reference: http://http://twitter.github.io/bootstrap/index.html
+
+-->
+<div class="center hero-unit">
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+      <li>
+        <%= gravatar_for user, size: 52 %>
+        <%= link_to user.name, user %>
+      </li>
+  <% end %>
+</ul>
+</div>

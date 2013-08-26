@@ -1,0 +1,36 @@
+<small>
+  <%= image_tag("PlanWeb.jpg") %>
+</small>
+
+<br/>
+
+<h1>Planning Applications</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Planning authority</th>
+    <th>Planning authority reference</th>
+    <th>Applicant name</th>
+    <th>Application Type</th>
+  </tr>
+
+<% @planning_applications.each do |planning_application| %>
+  <tr>
+    <td><%= planning_application.user.email %></td>
+    <td><%= planning_application.planning_authority %></td>
+    <td><%= planning_application.planning_authority_reference %></td>
+    <td><%= planning_application.applicant_name %></td>
+    <td><%= planning_application.application_type %></td>
+    <td><%= link_to 'Show', planning_application %></td>
+    <% if current_user.admin %>
+        <td><%= link_to 'Edit', edit_planning_application_path(planning_application) %></td>
+        <td><%= link_to 'Destroy', planning_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Planning application', new_planning_application_path %>

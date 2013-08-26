@@ -1,0 +1,35 @@
+<!--
+
+Reference: http://ruby.railstutorial.org/ruby-on-rails-tutorial-book
+Reference: http://http://twitter.github.io/bootstrap/index.html
+
+-->
+<div class="center hero-unit">
+
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+
+  <div class="span8">
+    <% if @user.planning_applications.any? %>
+        <% @user.planning_applications.each do |application| %>
+            <h3><%= link_to 'application #' + application.id.to_s, application %></h3>
+        <% end %>
+    <% end %>
+
+    <% if @user.web_design_assignments.any? %>
+        <% @user.web_design_assignments.each do |web_assignment| %>
+            <h3><%= link_to 'web_assignment #' + web_assignment.id.to_s, web_assignment %></h3>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,98 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @planning_application.user_id %>
+</p>
+
+<p>
+  <b>Planning authority:</b>
+  <%= @planning_application.planning_authority %>
+</p>
+
+<p>
+  <b>Planning authority reference:</b>
+  <%= @planning_application.planning_authority_reference %>
+</p>
+
+<p>
+  <b>Applicant name:</b>
+  <%= @planning_application.applicant_name %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @planning_application.application_type %>
+</p>
+
+<p>
+  <b>Location address:</b>
+  <%= @planning_application.location_address %>
+</p>
+
+<p>
+  <b>Lodged with planning authority on:</b>
+  <%= @planning_application.lodged_with_planning_authority_on %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @planning_application.description %>
+</p>
+
+<p>
+  <b>Validated by planning authority on:</b>
+  <%= @planning_application.validated_by_planning_authority_on %>
+</p>
+
+<p>
+  <b>Decision expected on:</b>
+  <%= @planning_application.decision_expected_on %>
+</p>
+
+<p>
+  <b>Decision received on:</b>
+  <%= @planning_application.decision_received_on %>
+</p>
+
+<p>
+  <b>Decision:</b>
+  <%= @planning_application.decision %>
+</p>
+
+<p>
+  <b>Extension requested on:</b>
+  <%= @planning_application.extension_requested_on %>
+</p>
+
+<p>
+  <b>Extension granted on:</b>
+  <%= @planning_application.extension_granted_on %>
+</p>
+
+<p>
+  <b>Url to observations:</b>
+  <%= @planning_application.url_to_observations %>
+</p>
+
+<p>
+  <b>Number of observations:</b>
+  <%= @planning_application.number_of_observations %>
+</p>
+
+<p>
+  <b>Commencement notice received by planning authority on:</b>
+  <%= @planning_application.commencement_notice_received_by_planning_authority_on %>
+</p>
+
+<p>
+  <b>Commenced on:</b>
+  <%= @planning_application.commenced_on %>
+</p>
+
+<% if current_user.admin %>
+<%= link_to 'Edit', edit_planning_application_path(@planning_application) %> |
+<%= link_to 'Back', planning_applications_path %>
+<% else %>
+<%= link_to 'back',current_user %>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @web_design_assignment.user_id %>
+</p>
+
+<p>
+  <b>Job reference:</b>
+  <%= @web_design_assignment.job_reference %>
+</p>
+
+<p>
+  <b>Project stage:</b>
+  <%= @web_design_assignment.project_stage %>
+</p>
+
+<p>
+  <b>Issued on:</b>
+  <%= @web_design_assignment.issued_on %>
+</p>
+
+<p>
+  <b>Completion due on:</b>
+  <%= @web_design_assignment.completion_due_on %>
+</p>
+
+<% if current_user.admin %>
+    <%= link_to 'Edit', edit_web_design_assignment_path(@web_design_assignment) %> |
+    <%= link_to 'Back', web_design_assignments_path %>
+<% else %>
+    <%= link_to 'back',current_user %>
+<% end %>

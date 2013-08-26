@@ -1,0 +1,31 @@
+<h1>Web Design Assignments</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Job reference</th>
+    <th>Project stage</th>
+    <th>Issued on</th>
+    <th>Completion due on</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @web_design_assignments.each do |web_design_assignment| %>
+  <tr>
+    <td><%= web_design_assignment.user.email %></td>
+    <td><%= web_design_assignment.job_reference %></td>
+    <td><%= web_design_assignment.project_stage %></td>
+    <td><%= web_design_assignment.issued_on %></td>
+    <td><%= web_design_assignment.completion_due_on %></td>
+    <td><%= link_to 'Show', web_design_assignment %></td>
+    <td><%= link_to 'Edit', edit_web_design_assignment_path(web_design_assignment) %></td>
+    <td><%= link_to 'Destroy', web_design_assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Web design assignment', new_web_design_assignment_path %>

@@ -1,0 +1,2 @@
+module WebDesignAssignmentsHelper
+end
